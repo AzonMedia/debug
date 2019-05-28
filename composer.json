@@ -1,0 +1,24 @@
+{
+    "name": "azonmedia/debug",
+    "type": "library",
+    "description": "Debug utilities",
+    "keywords": ["utility","debug"],
+    "homepage": "https://github.com/AzonMedia/debug",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Vesko Kenashkov",
+            "email": "kenashkov@azonmedia.com",
+            "homepage": "http://azonmedia.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Azonmedia\\Debug\\": "src/"
+        }
+    }
+}
