@@ -50,11 +50,20 @@ abstract class BackendBase
     public function handle(string $command) : ?string
     {
         $ret = NULL;
-        foreach ($this->commands as $Command) {
-            $ret = $Command->handle();
+        foreach ($this->commands as $CommandHandler) {
+            $ret = $CommandHandler->handle($command);
             if (is_string($ret)) {
                 break;
             }
+        }
+        return $ret;
+    }
+
+    public function help() : string
+    {
+        $ret = '';
+        foreach ($this->commands as $CommandHandler) {
+            $ret .= $CommandHandler::help().PHP_EOL;
         }
         return $ret;
     }

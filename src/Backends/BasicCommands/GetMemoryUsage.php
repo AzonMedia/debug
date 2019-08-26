@@ -29,4 +29,12 @@ implements CommandInterface
     {
         return 'show memory';
     }
+
+    public static function help() : string
+    {
+//        $ret = <<<'HELP'
+//show memory - shows details about the used memory
+//HELP;
+        return 'show memory - shows details about the used memory by this worker';
+    }
 }

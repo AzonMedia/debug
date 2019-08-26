@@ -42,12 +42,28 @@ implements DebuggerInterface
     public function handle(string $command) : ?string
     {
         $ret = NULL;
-        foreach ($this->backends as $RegisteredBackend) {
-            $ret = $RegisteredBackend->handle($command);
-            if (is_string($ret)) {
-                break;
+        //the help command is hardcoded and can not be overrden by the registered backends
+        if (strtolower($command) === 'help') {
+            $ret = $this->help();
+        } else {
+            foreach ($this->backends as $RegisteredBackend) {
+                $ret = $RegisteredBackend->handle($command);
+                if (is_string($ret)) {
+                    break;
+                }
             }
         }
+
+        return $ret;
+    }
+
+    private function help() : string
+    {
+        $ret = '';
+        foreach ($this->backends as $RegisteredBackend) {
+            $ret .= $RegisteredBackend->help().PHP_EOL;
+        }
+        $ret .= 'quit - exit the debugger'.PHP_EOL;
         return $ret;
     }
 }

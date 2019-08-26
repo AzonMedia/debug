@@ -9,4 +9,6 @@ interface CommandInterface
     public function can_handle(string $command) : bool;
 
     public static function handles_commands() : string;
+
+    public static function help() : string;
 }
