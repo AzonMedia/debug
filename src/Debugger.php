@@ -39,7 +39,7 @@ implements DebuggerInterface
         return $ret;
     }
 
-    public function handle(string $command) : ?string
+    public function handle(string $command, string $current_prompt, ?string &$change_prompt_to = NULL) : ?string
     {
         $ret = NULL;
         //the help command is hardcoded and can not be overrden by the registered backends
@@ -47,7 +47,7 @@ implements DebuggerInterface
             $ret = $this->help();
         } else {
             foreach ($this->backends as $RegisteredBackend) {
-                $ret = $RegisteredBackend->handle($command);
+                $ret = $RegisteredBackend->handle($command, $current_prompt, $change_prompt_to);
                 if (is_string($ret)) {
                     break;
                 }

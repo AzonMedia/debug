@@ -47,11 +47,11 @@ abstract class BackendBase
 
     }
 
-    public function handle(string $command) : ?string
+    public function handle(string $command, string $current_prompt, ?string &$change_prompt_to = NULL) : ?string
     {
         $ret = NULL;
         foreach ($this->commands as $CommandHandler) {
-            $ret = $CommandHandler->handle($command);
+            $ret = $CommandHandler->handle($command, $current_prompt, $change_prompt_to);
             if (is_string($ret)) {
                 break;
             }
