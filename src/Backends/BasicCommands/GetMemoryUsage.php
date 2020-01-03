@@ -15,7 +15,7 @@ implements CommandInterface
             $ret =
                 'memory_get_usage(): '.memory_get_usage()/(1024*1024).'Mb'.PHP_EOL.
                 'memory_get_usage(TRUE): '.memory_get_usage(TRUE)/(1024*1024).'Mb'.PHP_EOL.
-                'memory_get_peak_usage(TRUE): '.memory_get_peak_usage()/(1024*1024).'Mb'.PHP_EOL.
+                'memory_get_peak_usage(): '.memory_get_peak_usage()/(1024*1024).'Mb'.PHP_EOL.
                 'memory_get_peak_usage(TRUE): '.memory_get_peak_usage(TRUE)/(1024*1024).'Mb';
         }
         return $ret;
