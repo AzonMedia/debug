@@ -43,7 +43,7 @@ implements DebuggerInterface
     public function handle(string $command, string $current_prompt, ?string &$change_prompt_to = NULL) : ?string
     {
         $ret = NULL;
-        //the help command is hardcoded and can not be overrden by the registered backends
+        //the help command is hardcoded and can not be overriden by the registered backends
         if (strtolower($command) === 'help') {
             $ret = $this->help();
         } else {

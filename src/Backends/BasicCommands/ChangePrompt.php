@@ -37,7 +37,7 @@ class ChangePrompt
 
     public static function handles_commands() : string
     {
-        $ret = 'set prompt'.PHP_EOL.'restore prompt';
+        $ret = 'set prompt'.PHP_EOL.'restore prompt'.PHP_EOL;
         return $ret;
     }
 
