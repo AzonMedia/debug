@@ -4,7 +4,7 @@
     "description": "Debug utilities",
     "keywords": ["utility","debug"],
     "homepage": "https://github.com/AzonMedia/debug",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vesko Kenashkov",
